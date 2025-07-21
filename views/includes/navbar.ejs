@@ -1,88 +1,90 @@
 <style>
- /* Reuse your current style, but make it mobile-friendly */
+  .success-btn {
+    color: #ff385c;
+    border-color: #ff385c;
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+  }
 
-.success-btn {
-  color: #ff385c;
-  border-color: #ff385c;
-  border-radius: 2rem;
-  padding: 0 0.75rem;
-  white-space: nowrap;
-}
+  .success-btn:hover {
+    background-color: #ff385c;
+    color: white;
+  }
 
-.success-btn:hover {
-  border-color: #ff385c;
-  background-color: #ff385c;
-  color: white;
-}
-
-.success-btn i {
-  margin-right: 0.5rem;
-}
-
-.success-inp {
-  border-radius: 25px;
-  padding: 0 1rem;
-  flex-grow: 1;
-}
-
-/* Responsive tweaks for mobile */
-@media (max-width: 768px) {
-  .navbar .d-flex {
-    flex-direction: column;
-    width: 100%;
+  .success-btn i {
+    margin-right: 0.5rem;
   }
 
   .success-inp {
-    margin-bottom: 0.5rem;
+    border-radius: 25px;
+    padding: 0.4rem 1rem;
     width: 100%;
   }
 
-  .success-btn {
-    width: 100%;
+  /* Responsive tweaks for mobile */
+  @media (max-width: 768px) {
+    .navbar .search-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .navbar .success-inp {
+      margin-bottom: 0.5rem;
+    }
+
+    .navbar .success-btn {
+      width: 100%;
+    }
+
+    .navbar .navbar-nav .nav-link {
+      text-align: center;
+      padding: 0.5rem 0;
+    }
   }
-
-  .navbar-nav.ms-auto {
-    margin-top: 0.5rem;
-  }
-
-  .navbar-nav .nav-link {
-    text-align: center;
-    padding: 0.5rem 0;
-  }
-}
-
-
 </style>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"> <i class="fa-solid fa-compass"> </i></a>
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
-    </button> 
+    </button>
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <!-- Left links -->
       <div class="navbar-nav">
         <a class="nav-link" href="/listings">Explore</a>
       </div>
 
-
-
-      <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search">
-      <input class="form-control me-2 success-inp" type="search" placeholder="Search Destinations..." />
-      <button class="btn btn-outline-success success-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-    </form>
+      <!-- Search Bar -->
+      <div class="navbar-nav ms-auto me-auto w-100 mt-2 mt-lg-0">
+        <form class="d-flex search-form w-100" role="search">
+          <input class="form-control me-2 success-inp" type="search" placeholder="Search Destinations..." />
+          <button class="btn btn-outline-success success-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
       </div>
 
-
-      <div class="navbar-nav ms-auto">
+      <!-- Right side auth links -->
+      <div class="navbar-nav ms-lg-auto">
         <a class="nav-link" href="/listings/new">Airbnb your home</a>
-      <% if(!currUser) {%>
-        <a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i> &nbsp;&nbsp;<b>SignUp</b> </a>
-        <a class="nav-link  " href="/login"><i class="fa-solid fa-right-to-bracket"></i> &nbsp;&nbsp; <b>Login</b></a>
-      <% }if(currUser) {%>
-        <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Logout</a>
-      <% }%>
+
+        <% if (!currUser) { %>
+          <a class="nav-link" href="/signup">
+            <i class="fas fa-user-plus"></i>&nbsp;&nbsp;<b>SignUp</b>
+          </a>
+          <a class="nav-link" href="/login">
+            <i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;<b>Login</b>
+          </a>
+        <% } else { %>
+          <a class="nav-link" href="/logout">
+            <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Logout
+          </a>
+        <% } %>
       </div>
     </div>
   </div>
