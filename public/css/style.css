@@ -119,13 +119,12 @@ footer{
     width: 60vh;
 }   
 /* maps */
-#map { 
-    height:25rem;
-    width: 100vh;
-    border: .25rem #222222 solid ;
-    border-radius: 2rem; 
+#map {
+  width: 100%;
+  min-height: 350px;
+  border-radius: 10px;
+  margin-top: 1rem;
 }
-
 /* show page */
 
 @media (max-width: 768px) {
