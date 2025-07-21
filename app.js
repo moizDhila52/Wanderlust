@@ -75,6 +75,9 @@ async function main() {
 await mongoose.connect(url);
 }
 
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+})
 app.listen(port, ()=>{
     console.log(`Listening on ${port}.`);
 })
