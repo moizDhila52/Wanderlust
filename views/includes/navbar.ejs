@@ -1,24 +1,56 @@
 <style>
-  .success-btn{
-    color: #ff385c;
-    border-color: #ff385c;
-    border-radius: 2rem;
-    margin: 0.5rem 3rem 0.5rem 0rem ;
-    padding: 0 .5rem 0 .5rem;
+ /* Reuse your current style, but make it mobile-friendly */
+
+.success-btn {
+  color: #ff385c;
+  border-color: #ff385c;
+  border-radius: 2rem;
+  padding: 0 0.75rem;
+  white-space: nowrap;
+}
+
+.success-btn:hover {
+  border-color: #ff385c;
+  background-color: #ff385c;
+  color: white;
+}
+
+.success-btn i {
+  margin-right: 0.5rem;
+}
+
+.success-inp {
+  border-radius: 25px;
+  padding: 0 1rem;
+  flex-grow: 1;
+}
+
+/* Responsive tweaks for mobile */
+@media (max-width: 768px) {
+  .navbar .d-flex {
+    flex-direction: column;
+    width: 100%;
   }
-  .success-btn:hover{
-    border-color: #ff385c;
-    background-color: #ff385c;
+
+  .success-inp {
+    margin-bottom: 0.5rem;
+    width: 100%;
   }
-  .success-btn i{
-    display: inline;
-    margin-right: .5rem;
+
+  .success-btn {
+    width: 100%;
   }
-  .success-inp{
-    margin: 0.5rem 3rem 0.5rem 3rem ;
-    border-radius: 25px;
-    padding: 0 3rem 0 3rem;
+
+  .navbar-nav.ms-auto {
+    margin-top: 0.5rem;
   }
+
+  .navbar-nav .nav-link {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}
+
 
 </style>
 
